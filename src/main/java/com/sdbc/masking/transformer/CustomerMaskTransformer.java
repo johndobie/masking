@@ -1,6 +1,6 @@
 package com.sdbc.masking.transformer;
 
-import com.sdbc.masking.model.Customer;
+import com.sdbc.masking.model.CustomerDetails;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
@@ -13,16 +13,16 @@ public interface CustomerMaskTransformer {
     public static final String NI_DEFAULT = "********";
 
     @Mapping(target="middleName", ignore = true)
-    @Mapping(target="personalDetails.nationalInsuranceNumber", qualifiedByName = "nationalInsuranceNumber")
+    @Mapping(target="personalDetails.niNumber", qualifiedByName = "niNumber")
     @Mapping(target="personalDetails.dateOfBirth", qualifiedByName = "dateOfBirth")
-    Customer getMaskedCustomer(Customer customer);
+    CustomerDetails getMaskedCustomer(CustomerDetails customerDetails);
 
     @Named("dateOfBirth")
     default String maskDateOfBirth(String dob){
         return DOB_DEFAULT;
     }
 
-    @Named("nationalInsuranceNumber")
+    @Named("niNumber")
     default String maskNationalInsuranceNumber(String nationalInsuranceNumber){
         return NI_DEFAULT;
     }

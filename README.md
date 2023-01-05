@@ -17,7 +17,7 @@ UnMasked Data
 curl http://localhost:8080/customer
 ```
 ```json
-{"firstName":"John","middleName":"A","lastName":"Dobie","personalDetails":{"nationalInsuranceNumber":"NS1234567","dateOfBirth":"1970-01-01"}}
+{"firstName":"John","middleName":"A","lastName":"Dobie","personalDetails":{"niNumber":"NS1234567","dateOfBirth":"1970-01-01"}}
 ```
 Masked Data
 
@@ -26,5 +26,5 @@ Masked Data
 curl http://localhost:8080/customer/masked
 ```
 ```json
-{"firstName":"John","middleName":null,"lastName":"Dobie","personalDetails":{"nationalInsuranceNumber":"********","dateOfBirth":"****-**-**"}}
+{"firstName":"John","middleName":null,"lastName":"Dobie","personalDetails":{"niNumber":"********","dateOfBirth":"****-**-**"}}
 ```

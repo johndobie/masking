@@ -7,6 +7,6 @@ import lombok.Data;
 @Builder
 public class PersonalDetails {
 
-    private String nationalInsuranceNumber;
+    private String niNumber;
     private String dateOfBirth;
 }
